@@ -1,9 +1,11 @@
-import { Stack, Text } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
 import HomeNav from './Shared/HomeNav'
 import CallToAction from './Shared/CallToAction'
 import WhyEventEase from './Shared/WhyEventEase'
 import BenefitsOfEventEase from './Shared/BenefitsOfEventEase'
 import HereToStay from './Shared/HereToStay'
+import GetStarted from './Shared/GetStarted'
+import Footer from './Shared/Footer'
 const Home = () => {
     return (
         <Stack>
@@ -19,6 +21,12 @@ const Home = () => {
             </Stack>
             <Stack bgGradient='linear(to-r, bgColor.300, bgColor.1200, bgColor.300)' mt={'-8px'}>
                 <HereToStay />
+            </Stack>
+            <Stack>
+                <GetStarted />
+            </Stack>
+            <Stack backgroundColor={'bgColor.300'}>
+                <Footer />
             </Stack>
         </Stack>
     )

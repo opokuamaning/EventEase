@@ -10,7 +10,7 @@ import pieChart from "../../assets/pie-chart1.svg";
 const WhyEventEase = () => {
   return (
     <Stack m={'auto'} direction={{ base: 'column', md: 'row' }} gap={'20px'} pt={'50px'} pb={'50px'} justifyContent={'center'} alignItems={'center'}>
-      <Stack color={'bgColor.400'} w={{base: '100%', md: '50%'}}>
+      <Stack color={'bgColor.400'} w={{base: '100%', md: '50%'}} p={'20px'}>
         <Text fontSize={{ base: '30px', md: '50px' }} fontWeight={'900'}>Why Should I use EventEase?</Text>
         <Text fontSize={'14px'}>
           EventEase is your ultimate solution for seamless event management.
@@ -21,7 +21,7 @@ const WhyEventEase = () => {
           payment processing with trusted gateways.
         </Text>
       </Stack>
-      <Stack color={'bgColor.400'} fontSize={'14px'}>
+      <Stack color={'bgColor.400'} fontSize={'14px'} p={'20px'}>
         <Card p={'5px'} direction={'row'} shadow={'none'}>
           <Image src={activity1} alt="activity" w={'30px'} position={'absolute'} top={'5%'} CardShadow={'lg'}/>
           <Stack position={'relative'} left={'12%'} w={'80%'}>

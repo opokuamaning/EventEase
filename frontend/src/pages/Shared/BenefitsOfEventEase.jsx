@@ -3,7 +3,7 @@ import { MdCheckCircle } from "react-icons/md";
 import benefits from '../../assets/Benefits.svg';
 const BenefitsOfEventEase = () => {
     return (
-        <Stack m={'auto'} direction={{ base: 'column', md: 'row' }} gap={'20px'} pt={'50px'} pb={'50px'} justifyContent={'center'} alignItems={'center'}>
+        <Stack m={'auto'} direction={{ base: 'column', md: 'row' }} gap={'20px'} pl={'20px'} pr={'20px'} pt={'50px'} pb={'50px'} justifyContent={'center'} alignItems={'center'}>
             <Stack color={'bgColor.400'} w={{ base: '100%', md: '50%' }}>
                 <Text fontSize={{ base: '30px', md: '50px' }} fontWeight={'900'}>Benefits of Using EventEase</Text>
                 <List spacing={3}>
