@@ -11,7 +11,7 @@ const Footer = () => {
                         <ListItem fontWeight={'300'}>Phone: +233205858348</ListItem>
                         <ListItem fontWeight={'300'}>Email: amaningopoku@gmail.com</ListItem>
                     </UnorderedList>
-                    <UnorderedList styleType={'none'} dir>
+                    <UnorderedList styleType={'none'}>
                         <ListItem fontWeight={'700'}>Get In Touch</ListItem>
                         <Stack direction={'row'} gap={10} fontWeight={'300'}>
                             <Stack>

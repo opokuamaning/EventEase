@@ -23,21 +23,21 @@ const WhyEventEase = () => {
       </Stack>
       <Stack color={'bgColor.400'} fontSize={'14px'} p={'20px'}>
         <Card p={'5px'} direction={'row'} shadow={'none'}>
-          <Image src={activity1} alt="activity" w={'30px'} position={'absolute'} top={'5%'} CardShadow={'lg'}/>
+          <Image src={activity1} alt="activity" w={'30px'} position={'absolute'} top={'5%'} boxShadow={'lg'}/>
           <Stack position={'relative'} left={'12%'} w={'80%'}>
             <Text fontWeight={'900'}>Simple and Effective</Text>
             <Text>Easily create and manage events with our user-friendly interface.</Text>
           </Stack>
         </Card>
         <Card p={'5px'} direction={'row'} shadow={'none'}>
-          <Image src={pieChart} alt="activity" w={'30px'} position={'absolute'} top={'5%'} CardShadow={'lg'}/>
+          <Image src={pieChart} alt="activity" w={'30px'} position={'absolute'} top={'5%'} boxShadow={'lg'}/>
           <Stack position={'relative'} left={'12%'} w={'80%'}>
             <Text fontWeight={'900'}>Data Management</Text>
             <Text>Access detailed reports and analytics to understand your event’s performance.</Text>
           </Stack>
         </Card>
         <Card p={'5px'} direction={'row'} shadow={'none'}>
-          <Image src={command} alt="activity" w={'30px'} position={'absolute'} top={'5%'} CardShadow={'lg'}/>
+          <Image src={command} alt="activity" w={'30px'} position={'absolute'} top={'5%'} boxShadow={'lg'}/>
           <Stack position={'relative'} left={'12%'} w={'80%'}>
             <Text fontWeight={'900'}>Secure Payments</Text>
             <Text>Enjoy secure and reliable payment processing with trusted gateways.</Text>
