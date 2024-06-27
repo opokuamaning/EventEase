@@ -6,6 +6,12 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home />,
         errorElement: <NotFound />,
+        children: [
+            {
+                path: 'signup',
+            element: <SignUp />,
+        }
+        ],
     }, 
 ]);
 export default router;
