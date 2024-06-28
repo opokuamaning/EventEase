@@ -75,7 +75,7 @@ const SignUpForm = () => {
               <Divider bg={'bgColor.1300'}></Divider>
             </Stack>
             <Stack>
-              <Button>Continue with Google {` `} <Image src={googleLogo} /></Button>
+              <Button gap={2}><Text>Continue with Google</Text> <Image src={googleLogo} /></Button>
             </Stack>
             <Stack textAlign={'center'}>
               <Text>Already have an account? <Link color={'bgColor.300'} fontWeight={'600'}>Sign in</Link></Text>
