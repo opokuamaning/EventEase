@@ -1,14 +1,7 @@
 import { HStack, Image, Text, Button } from '@chakra-ui/react'
 import Logo from '../../assets/icon.svg'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
 const HomeNav = () => {
-    const navigate = useNavigate();
-    const handleLogin = () => {
-        navigate('/login')
-    }
-    const handleSignUp = () => {
-        navigate('/signup')
-    }
     return (
         <HStack alignItems={'center'} justifyContent={'space-between'} p={'15px'} bgGradient='linear(to-r, bgColor.200t, bgColor.100t)'>
             <Link to='/'>
