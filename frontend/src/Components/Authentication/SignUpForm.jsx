@@ -4,9 +4,16 @@ import sideImage from '../../assets/right-column.svg'
 import Logo from '../../assets/icon.svg'
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import googleLogo from '../../assets/Google.svg'
+import{ useState } from 'react'
 const SignUpForm = () => {
-  const [show, setShow] = React.useState(false)
-  const handleClick = () => setShow(!show)
+  const [show, setShow] = useState({
+    password: false,
+    confirmPassword: false
+  });
+  const handleClick = (value) => {
+    if (value === 'password') setShow({ ...show, password: !show.password })
+        else if (value === 'confirmPassword') setShow({ ...show, confirmPassword: !show.confirmPassword });
+  };
   return (
     <Stack color={'bgColor.400'} direction={'row'}>
       <Stack width={{base: '100%', md: '50%'}}>
@@ -31,12 +38,12 @@ const SignUpForm = () => {
                   <InputGroup size='md'>
                     <Input
                       pr='4.5rem'
-                      type={show ? 'text' : 'password'}
+                      type={show.password ? 'text' : 'password'}
                       placeholder=''
                     />
                     <InputRightElement width='4.5rem'>
-                      <Button h='1.75rem' size='sm' onClick={handleClick}>
-                        {show ? <FaRegEyeSlash /> : <FaRegEye />}
+                      <Button h='1.75rem' size='sm' onClick={()=>handleClick('password')}>
+                        {show.password ? <FaRegEyeSlash /> : <FaRegEye />}
                       </Button>
                     </InputRightElement>
                   </InputGroup>
@@ -47,12 +54,12 @@ const SignUpForm = () => {
                   <InputGroup size='md'>
                     <Input
                       pr='4.5rem'
-                      type={show ? 'text' : 'password'}
+                      type={show.confirmPassword ? 'text' : 'password'}
                       placeholder=''
                     />
                     <InputRightElement width='4.5rem'>
-                      <Button h='1.75rem' size='sm' onClick={handleClick}>
-                        {show ? <FaRegEyeSlash /> : <FaRegEye />}
+                      <Button h='1.75rem' size='sm' onClick={()=>handleClick('confirmPassword')}>
+                        {show.confirmPassword ? <FaRegEyeSlash /> : <FaRegEye />}
                       </Button>
                     </InputRightElement>
                   </InputGroup>
