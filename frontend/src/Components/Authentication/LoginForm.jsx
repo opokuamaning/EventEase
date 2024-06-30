@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Stack, Text, FormControl, Input, FormLabel, FormErrorMessage, InputGroup, InputRightElement, Button, Divider, Link, Image, Checkbox } from '@chakra-ui/react';
+import { Stack, Text, FormControl, Input, FormLabel, FormErrorMessage, InputGroup, InputRightElement, Button, Divider, Image, Checkbox } from '@chakra-ui/react';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import googleLogo from '../../assets/Google.svg';
+import { Link } from 'react-router-dom';
 const LoginForm = () => {
     const [show, setShow] = useState({
       password: false,
@@ -22,12 +23,12 @@ const LoginForm = () => {
           <Stack>
             <form action="" >
               <Stack gap={'5'}>
-                <FormControl variant="floating" id="your-name" isRequired>
+                <FormControl variant="floating" id="your-email" isRequired>
                   <Input type='email' placeholder='' />
                   <FormLabel>Your Email</FormLabel>
                   <FormErrorMessage></FormErrorMessage>
                 </FormControl>
-                <FormControl variant="floating" id="your-name" isRequired>
+                <FormControl variant="floating" id="your-password" isRequired>
                   <InputGroup size='md'>
                     <Input
                       pr='4.5rem'
@@ -47,7 +48,7 @@ const LoginForm = () => {
                  <FormControl >
                     <FormLabel display={'flex'} gap={3} alignItems={'center'} color={'bgColor.1400'}><Checkbox borderColor={'bgColor.1400'} />Remember me</FormLabel>
                   </FormControl>  
-                  <Link color={'bgColor.300'} w={'50%'}>Forgot Password?</Link> 
+                  <Link to={'/auth/forgot-password'} color={'bgColor.300'} w={'50%'}>Forgot Password?</Link> 
                 </Stack>
                 <Button bg={'bgColor.300'} color={'bgColor.100'}>Sign Up</Button>
               </Stack>
@@ -63,7 +64,7 @@ const LoginForm = () => {
               <Button gap={2}><Text>Continue with Google</Text> <Image src={googleLogo} /></Button>
             </Stack>
             <Stack textAlign={'center'}>
-              <Text>Already have an account? <Link color={'bgColor.300'} fontWeight={'600'}>Sign in</Link></Text>
+              <Text>Already have an account? <Link color={'bgColor.300'} fontWeight={'600'} to={'/auth/signup'}>Sign in</Link></Text>
             </Stack>
           </Stack>
         </Stack>

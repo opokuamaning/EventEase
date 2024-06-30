@@ -1,4 +1,4 @@
-import { createBrowserRouter, } from 'react-router-dom';
+import { Navigate, createBrowserRouter, } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import SignUpForm from '../src/Components/Authentication/SignUpForm'
@@ -18,29 +18,29 @@ const router = createBrowserRouter([
         errorElement: <NotFound />,
         children: [
             {
+                index: true,
+                element: <Navigate to='auth' replace />,
+            },
+            {
                 path: 'login',
                 element: <LoginForm />,
+                errorElement: <NotFound />,
             },
             {
                 path: 'signup',
                 element: <SignUpForm />,
                 errorElement: <NotFound />,
             },
-            //   {
-            //     index: true,
-            //     element: <Navigate to='login' replace />,
-            //   },
-            //   {
-              {
+            {
                 path: 'reset',
                 element: <ResetPassword />,
-              },
-              {
-                path: 'forget-password',
+                errorElement: <NotFound />,
+            },
+            {
+                path: 'forgot-password',
                 element: <ForgotPassword />,
                 errorElement: <NotFound />,
-              },
-
+            },
             //   {
             //     path: 'check-email',
             //     element: <CheckEmail />,

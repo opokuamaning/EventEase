@@ -1,7 +1,8 @@
-import { Image, Divider, Link, Stack, Text, FormControl, FormLabel, Input, FormErrorMessage, InputGroup, InputRightElement, Button } from '@chakra-ui/react';
+import { Image, Divider, Stack, Text, FormControl, FormLabel, Input, FormErrorMessage, InputGroup, InputRightElement, Button } from '@chakra-ui/react';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import googleLogo from '../../assets/Google.svg'
-import{ useState } from 'react'
+import{ useState } from 'react';
+import { Link } from 'react-router-dom';
 const SignUpForm = () => {
   const [show, setShow] = useState({
     password: false,
@@ -83,7 +84,7 @@ const SignUpForm = () => {
               <Button gap={2}><Text>Continue with Google</Text> <Image src={googleLogo} /></Button>
             </Stack>
             <Stack textAlign={'center'}>
-              <Text>Already have an account? <Link color={'bgColor.300'} fontWeight={'600'}>Sign in</Link></Text>
+              <Text>Already have an account? <Link color={'bgColor.300'} fontWeight={'600'} to='/auth/login'>Sign in</Link></Text>
             </Stack>
           </Stack>
         </Stack>
