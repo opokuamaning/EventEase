@@ -3,7 +3,7 @@ import Logo from '../../assets/icon.svg'
 import { Link, } from 'react-router-dom'
 const HomeNav = () => {
     return (
-        <HStack alignItems={'center'} justifyContent={'space-between'} p={'15px'} bgGradient='linear(to-r, bgColor.200t, bgColor.100t)'>
+        <HStack alignItems={'center'} justifyContent={'space-between'} p={{base: '15px', md: '15px 70px'}} bgGradient='linear(to-r, bgColor.200t, bgColor.100t)'>
             <Link to='/'>
                 <HStack>
                     <Image src={Logo} w={'40px'}/>
