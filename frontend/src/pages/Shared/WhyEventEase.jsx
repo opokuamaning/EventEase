@@ -12,7 +12,7 @@ const WhyEventEase = () => {
     <Stack m={'auto'} direction={{ base: 'column', md: 'row' }} gap={'20px'} pt={'50px'} pb={'50px'} justifyContent={'center'} alignItems={'center'}>
       <Stack color={'bgColor.400'} w={{base: '100%', md: '50%'}} p={'20px'}>
         <Text fontSize={{ base: '30px', md: '50px' }} fontWeight={'900'}>Why Should I use EventEase?</Text>
-        <Text fontSize={'14px'}>
+        <Text fontSize={'16px'}>
           EventEase is your ultimate solution for seamless event management.
           Easily create and manage events with our user-friendly interface, and
           effortlessly sell tickets online while keeping track of sales in
@@ -25,21 +25,21 @@ const WhyEventEase = () => {
         <Card p={'5px'} direction={'row'} shadow={'none'}>
           <Image src={activity1} alt="activity" w={'30px'} position={'absolute'} top={'5%'} boxShadow={'lg'}/>
           <Stack position={'relative'} left={'12%'} w={'80%'}>
-            <Text fontWeight={'900'}>Simple and Effective</Text>
+            <Text fontWeight={'600'} fontSize={'25px'}>Simple and Effective</Text>
             <Text>Easily create and manage events with our user-friendly interface.</Text>
           </Stack>
         </Card>
         <Card p={'5px'} direction={'row'} shadow={'none'}>
           <Image src={pieChart} alt="activity" w={'30px'} position={'absolute'} top={'5%'} boxShadow={'lg'}/>
           <Stack position={'relative'} left={'12%'} w={'80%'}>
-            <Text fontWeight={'900'}>Data Management</Text>
+            <Text fontWeight={'600'} fontSize={'25px'}>Data Management</Text>
             <Text>Access detailed reports and analytics to understand your event’s performance.</Text>
           </Stack>
         </Card>
         <Card p={'5px'} direction={'row'} shadow={'none'}>
           <Image src={command} alt="activity" w={'30px'} position={'absolute'} top={'5%'} boxShadow={'lg'}/>
           <Stack position={'relative'} left={'12%'} w={'80%'}>
-            <Text fontWeight={'900'}>Secure Payments</Text>
+            <Text fontWeight={'600'} fontSize={'25px'}>Secure Payments</Text>
             <Text>Enjoy secure and reliable payment processing with trusted gateways.</Text>
           </Stack>
         </Card>

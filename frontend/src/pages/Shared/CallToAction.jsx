@@ -15,7 +15,7 @@ const CallToAction = () => {
                         <Text color={'bgColor.400'} fontSize={{base: '13px', md: '18px'}} w={{base: 'auto', md: '75%'}} fontWeight={'500'}>EventEase provides the tools to make your event memorable and stress-free. Join us today and experience the ease of perfect event management! </Text>
                     </Box>
                     <Box order={{ base: 2, md: 1 }}>
-                        <Image src={curve} w={{base: 'auto', md: '75%'}}/>
+                        <Image src={curve} w={{base: 'auto', md: '70%'}}/>
                     </Box>
                 </Stack>
                 <Button backgroundColor={'bgColor.300'} color={'bgColor.100'} w={{ base: 'auto', md: '30%' }}>Get Started For Free</Button>
