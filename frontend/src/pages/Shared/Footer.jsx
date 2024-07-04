@@ -3,7 +3,7 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <Stack m={'auto'} w={{base: '100%', md: '70%'}} >
+        <Stack m={'auto'} w={{base: '100%', md: '70%'}} color={'bgColor.100'}>
             <Stack display={'flex'} gap={30} p={'30px 10px'}>
                 <Stack direction={{ base: 'column', md: 'row' }} gap={10} justifyContent={'space-between'}>
                     <UnorderedList styleType={'none'}>
