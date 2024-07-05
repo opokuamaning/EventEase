@@ -6,13 +6,13 @@ const EventHome = () => {
   return (
     <Stack mt={'70px'}>
       <Stack color={'bgColor.100'} gap={5} bgGradient={'linear(to-r, bgColor.300, bgColor.1200, bgColor.300)'} p={'30px'} display={'flex'} alignItems={'center'}>
-        <Text fontWeight={'900'} fontSize={'36px'}>Discover New Events Coming Up</Text>
-        <Text fontSize={'14px'} fontWeight={'700'}>Search for your favorite event and register. You can’t afford to miss it</Text>
-        <Input type="search" w={'30%'} border={'1px solid #FFF'} color={'bgColor.1000'} placeholder="Search for events by their name" />
+        <Text fontWeight={'900'} fontSize={{base: '20px', md: '36px'}}>Discover New Events Coming Up</Text>
+        <Text fontSize={'14px'} textAlign={'center'} fontWeight={'700'}>Search for your favorite event and register. You can’t afford to miss it</Text>
+        <Input type="search" w={{base: '100%', md: '30%'}} height={'56px'} border={'1px solid #FFF'} color={'bgColor.1000'} placeholder="Search for events by their name" />
       </Stack>
-      <Stack w={'90%'} display={'flex'} m={'auto'} >
-        <Stack direction={'row'}>
-          <Stack width={'15%'}>
+      <Stack w={'90%'} display={'flex'} m={'auto'} p={'40px 0'}>
+        <Stack direction={{base: 'column', md: 'row'}}>
+          <Stack width={{base: '100%', md: '15%'}} display={{base: 'none', md: 'block'}}>
             <Stack>
               <Text fontWeight={'700'} fontSize={'20px'}>Filters</Text>
               <Stack pl={'15px'}>
@@ -37,17 +37,16 @@ const EventHome = () => {
               </Stack>
             </Stack>
           </Stack>
-          <Stack w={'85%'} display={'flex'} flexDirection={'row'} flexWrap={'wrap'} bg={'red'} justifyContent={'center'}>
+          <Stack w={{base: '95%', md: '85%'}} display={'flex'} flexDirection={{base: 'column', md: 'row'}} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}>
             {
               data.map((event) => (
                 <Card
                   direction={{ base: 'column', sm: 'row' }}
                   overflow='hidden'
                   variant='outline'
-                  w={'32%'}
+                  w={{base: '100%', md: '32%'}}
                   h={'200px'}
                   key={event.eventId}
-                  
                 >
                   <Image
                     objectFit='cover'
@@ -69,7 +68,7 @@ const EventHome = () => {
                           <Text>{event.date} | {event.time}</Text>
                         </Stack>
                       </Stack>
-                      <Text py='2' fontSize={'12px'} > {event.description} <Link to='/paid-event' color={'bgColor.1500'}>Read More...</Link>
+                      <Text py='2' fontSize={'12px'}> {event.description} <Link to='/events/paid-event' color={'bgColor.1500'}>Read More...</Link>
                       </Text>
                     </CardBody>
                   </Stack>

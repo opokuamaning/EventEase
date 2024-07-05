@@ -13,7 +13,7 @@ const EventNav = () => {
                     </HStack>
                 </Link>
                 <Stack>
-                    <Tabs variant='enclosed'>
+                    <Tabs variant='unstyled'>
                         <TabList>
                             <Tab>Event</Tab>
                             <Tab>My Event</Tab>
