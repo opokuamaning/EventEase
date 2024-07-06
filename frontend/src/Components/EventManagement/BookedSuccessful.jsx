@@ -1,8 +1,9 @@
 import { Stack, Text, Button } from "@chakra-ui/react"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import {QRCodeSVG} from 'qrcode.react';
 const BookedSuccessful = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const { event } = location.state || {};
   console.log(event);
@@ -17,6 +18,7 @@ const BookedSuccessful = () => {
     date: event.date,
     time: event.time,
     description: event.description,
+    price: event.price,
   })
   console.log(qrValues);
   return (
@@ -43,7 +45,7 @@ const BookedSuccessful = () => {
         <Stack alignItems={'center'}>
           <QRCodeSVG value={qrValues} size={'225'}/>
           <Stack direction={'row'}>
-            <Button>Back to Events</Button>
+            <Button onClick={()=>navigate('/events/event-home')}>Back to Events</Button>
             <Button bg={'bgColor.1700'} color={'bgColor.100'}>Cancel Ticket</Button>
           </Stack>
         </Stack>
