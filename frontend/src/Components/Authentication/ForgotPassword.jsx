@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Stack, Text, FormControl, Input, FormLabel, FormErrorMessage, InputGroup, InputRightElement, Button, Divider, Link, Image, Checkbox } from '@chakra-ui/react';
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import googleLogo from '../../assets/Google.svg';
 const ForgotPassword = () => {
     const [show, setShow] = useState({

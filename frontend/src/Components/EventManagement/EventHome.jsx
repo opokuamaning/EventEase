@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { eventData as data } from "../../data/db";
 
 const EventHome = () => {
+  
   return (
-    <Stack mt={'70px'}>
+    <Stack mt={{base: '94px', md: '70px'}}>
       <Stack color={'bgColor.100'} gap={5} bgGradient={'linear(to-r, bgColor.300, bgColor.1200, bgColor.300)'} p={'30px'} display={'flex'} alignItems={'center'}>
         <Text fontWeight={'900'} fontSize={{base: '20px', md: '36px'}}>Discover New Events Coming Up</Text>
         <Text fontSize={'14px'} textAlign={'center'} fontWeight={'700'}>Search for your favorite event and register. You can’t afford to miss it</Text>
@@ -68,7 +69,7 @@ const EventHome = () => {
                           <Text>{event.date} | {event.time}</Text>
                         </Stack>
                       </Stack>
-                      <Text py='2' fontSize={'12px'}> {event.description} <Link to='/events/paid-event' color={'bgColor.1500'}>Read More...</Link>
+                      <Text py='2' fontSize={'12px'}> {event.description} <Link to={`/events/event-details/${event.eventId}`} >Read More...</Link>
                       </Text>
                     </CardBody>
                   </Stack>

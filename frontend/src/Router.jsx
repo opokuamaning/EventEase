@@ -8,8 +8,7 @@ import ForgotPassword from './Components/Authentication/ForgotPassword';
 import ResetPassword from './Components/Authentication/ResetPassword';
 import EventNav from './Components/EventManagement/SharedFolder/EventNav';
 import EventHome from './Components/EventManagement/EventHome';
-import PaidEventDetails from './Components/EventManagement/PaidEventDetails';
-import FreeEventDetails from './Components/EventManagement/FreeEventDetails';
+import EventDetails from './Components/EventManagement/EventDetails';
 import BookedSuccessful from './Components/EventManagement/BookedSuccessful';
 import MyEvents from './Components/EventManagement/MyEvents';
 import CreateEvent from './Components/EventManagement/CreateEvent';
@@ -71,13 +70,8 @@ const router = createBrowserRouter([
                 errorElement: <NotFound />,
             },
             {
-                path: 'paid-event',
-                element: <PaidEventDetails />,
-                errorElement: <NotFound />,
-            },
-            {
-                path: 'free-event',
-                element: <FreeEventDetails />,
+                path: 'event-details/:id',
+                element: <EventDetails />,
                 errorElement: <NotFound />,
             },
             {
