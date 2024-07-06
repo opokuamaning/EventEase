@@ -75,7 +75,7 @@ const router = createBrowserRouter([
                 errorElement: <NotFound />,
             },
             {
-                path: 'booking-success',
+                path: 'booking-success/',
                 element: <BookedSuccessful />,
                 errorElement: <NotFound />,
             },

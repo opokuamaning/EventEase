@@ -1,10 +1,33 @@
 import { HStack, Image, Text, Button, Stack, Tab, Tabs, TabList } from '@chakra-ui/react'
 import Logo from '../../assets/icon.svg'
-import { Link, useNavigate, } from 'react-router-dom'
+import { Link, useNavigate, } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 const HomeNav = () => {
     const navigate = useNavigate();
+    const [bgColor, setBgColor] = useState('blue');
+    const handleScroll = () => {
+        if (window.scrollY > 50) {
+            setBgColor('red')
+        } else {
+            setBgColor('blue')
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
     return (
-        <HStack position={'fixed'} w={'100%'} alignItems={'center'} justifyContent={'space-between'} p={{ base: '15px', md: '15px 70px' }} zIndex={'1000'} bgGradient={{ base: 'linear(to-r, bgColor.200t, bgColor.100t)', md: 'bgColor.100' }}>
+        <HStack
+            position={'fixed'}
+            w={'100%'}
+            alignItems={'center'}
+            justifyContent={'space-between'}
+            p={{ base: '15px', md: '15px 70px' }}
+            zIndex={'1000'}
+            bgGradient={{ base: bgColor, md: bgColor }}>
             <Link to='/'>
                 <HStack>
                     <Image src={Logo} w={'40px'} />
@@ -15,7 +38,7 @@ const HomeNav = () => {
                 <Tabs variant='unstyled'>
                     <TabList>
                         <Tab>About Us</Tab>
-                        <Tab onClick={()=>navigate('/events/event-home')}>Events</Tab>
+                        <Tab onClick={() => navigate('/events/event-home')}>Events</Tab>
                         <Tab>Contact Us</Tab>
                     </TabList>
                 </Tabs>
