@@ -1,7 +1,9 @@
 import { Stack, Text, Image, Button, Box } from '@chakra-ui/react'
 import curve from '../../assets/Curve.svg'
 import heroImage from '../../assets/HeroImage.svg'
+import { useNavigate } from 'react-router-dom'
 const CallToAction = () => {
+    const navigate = useNavigate();
     return (
         <Stack w={{ base: '90%', md: '90%' }} direction={{ base: 'column', md: 'row' }} display={'flex'} m={'auto'} pt={'50px'} pb={'50px'} gap={'10'} justifyContent={'space-between'} alignItems={'center'}>
             <Stack gap={'6'}>
@@ -18,7 +20,7 @@ const CallToAction = () => {
                         <Image src={curve} w={{base: 'auto', md: '70%'}}/>
                     </Box>
                 </Stack>
-                <Button backgroundColor={'bgColor.300'} color={'bgColor.100'} w={{ base: 'auto', md: '30%' }}>Get Started For Free</Button>
+                <Button backgroundColor={'bgColor.300'} color={'bgColor.100'} w={{ base: 'auto', md: '30%' }} onClick={()=>navigate('/auth/signup')}>Get Started For Free</Button>
             </Stack>
             <Stack>
                 <Image src={heroImage} w={{ base: 'auto', md: '700px' }} />

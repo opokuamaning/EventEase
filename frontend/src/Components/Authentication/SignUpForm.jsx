@@ -1,25 +1,21 @@
-import { Image, Divider, Link, Stack, Text, FormControl, FormLabel, Input, FormErrorMessage, InputGroup, InputRightElement, Button } from '@chakra-ui/react';
-import sideImage from '../../assets/right-column.svg'
-import Logo from '../../assets/icon.svg'
+import { Image, Divider, Stack, Text, FormControl, FormLabel, Input, FormErrorMessage, InputGroup, InputRightElement, Button } from '@chakra-ui/react';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import googleLogo from '../../assets/Google.svg'
-import{ useState } from 'react'
+import{ useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 const SignUpForm = () => {
   const [show, setShow] = useState({
     password: false,
     confirmPassword: false
   });
+  const navigate = useNavigate();
   const handleClick = (value) => {
     if (value === 'password') setShow({ ...show, password: !show.password })
         else if (value === 'confirmPassword') setShow({ ...show, confirmPassword: !show.confirmPassword });
   };
   return (
-    <Stack color={'bgColor.400'} direction={'row'}>
-      <Stack width={{base: '100%', md: '50%'}}>
-        <Stack direction={'row'} alignItems={'center'} p={'20px'}>
-          <Image src={Logo} w={'40px'} />
-          <Text fontWeight={'900'} fontSize={'25px'}>EventEase</Text>
-        </Stack>
+    <Stack color={'bgColor.400'}>
+      <Stack width={'90%'} m={'auto'}>
         <Stack p={'15% 10%'}>
           <Stack lineHeight={'19px'}>
             <Text fontWeight={'900'} fontSize={'25px'} color={'bgColor.1400'}>Sign Up</Text>
@@ -84,13 +80,10 @@ const SignUpForm = () => {
               <Button gap={2}><Text>Continue with Google</Text> <Image src={googleLogo} /></Button>
             </Stack>
             <Stack textAlign={'center'}>
-              <Text>Already have an account? <Link color={'bgColor.300'} fontWeight={'600'}>Sign in</Link></Text>
+              <Text>Already have an account? <Link color={'bgColor.300'} fontWeight={'600'} to={'/auth/login'}>Sign in</Link></Text>
             </Stack>
           </Stack>
         </Stack>
-      </Stack>
-      <Stack width={'50%'} display={{base: 'none', md: 'flex'}}>
-        <Image src={sideImage} objectFit={'cover'} />
       </Stack>
     </Stack>
   )

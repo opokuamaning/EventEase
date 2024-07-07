@@ -64,7 +64,7 @@ const LoginForm = () => {
               <Button gap={2}><Text>Continue with Google</Text> <Image src={googleLogo} /></Button>
             </Stack>
             <Stack textAlign={'center'}>
-              <Text>Already have an account? <Link color={'bgColor.300'} fontWeight={'600'} to={'/auth/signup'}>Sign in</Link></Text>
+              <Text>Need an account? <Link color={'bgColor.300'} fontWeight={'600'} to={'/auth/signup'}>Create one</Link></Text>
             </Stack>
           </Stack>
         </Stack>

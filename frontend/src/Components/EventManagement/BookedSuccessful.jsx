@@ -24,7 +24,7 @@ const BookedSuccessful = () => {
   return (
     <Stack mt={{ base: '94px', md: '70px' }}>
       <Stack color={'bgColor.100'} gap={5} bgGradient={'linear(to-r, bgColor.300, bgColor.1200, bgColor.300)'} p={'30px'} display={'flex'} direction={'row'}>
-        <Stack bg={'bgColor.100'} w={'30px'} h={'30px'} display={'flex'} alignItems={'center'} justifyContent={'center'} borderRadius={'50%'} onClick={() => navigate(-1)}>
+        <Stack cursor={'pointer'} bg={'bgColor.100'} w={'30px'} h={'30px'} display={'flex'} alignItems={'center'} justifyContent={'center'} borderRadius={'50%'} onClick={() => navigate(-1)}>
           <ArrowBackIcon color={'bgColor.300'} />
         </Stack>
         <Stack alignItems={'center'} w={'95%'}>
@@ -32,14 +32,13 @@ const BookedSuccessful = () => {
           <Text fontSize={'14px'} textAlign={'center'} fontWeight={'500'}>Be sure to add very detailed description to the event.</Text>
         </Stack>
       </Stack>
-      <Stack w={'50%'} display={'flex'} justifyContent={'center'} alignItems={'center'} m={'50px auto'} >
+      <Stack w={{base: '95%', md: '50%'}} gap={'5'} display={'flex'} justifyContent={'center'} alignItems={'center'} m={'50px auto'} >
         <Stack textAlign={'center'}>
           <Text fontSize={'24px'} fontWeight={'900'}>Your Ticket has been booked successfully</Text>
           <Text fontSize={'14px'}>
             Please note that your QR code will be scanned on the day of the event to verify its authenticity.
             An email containing your QR code and all relevant event details will be sent to you upon successful ticket
             purchase. Ensure you bring a digital or printed copy of this email to the event for a seamless entry.
-            {console.log(event.eventName, event.date, event.eventLocation)}
           </Text>
         </Stack>
         <Stack alignItems={'center'}>
