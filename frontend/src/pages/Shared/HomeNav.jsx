@@ -5,12 +5,12 @@ import { useEffect, useState } from 'react';
 import { HamburgerIcon, } from '@chakra-ui/icons';
 const HomeNav = () => {
     const navigate = useNavigate();
-    const [bgColor, setBgColor] = useState('blue');
+    const [bgColor, setBgColor] = useState('bgColor.100');
     const handleScroll = () => {
         if (window.scrollY > 50) {
-            setBgColor('red')
+            setBgColor('bgColor.200')
         } else {
-            setBgColor('blue')
+            setBgColor('bgColor.100')
         }
     }
 
@@ -28,7 +28,8 @@ const HomeNav = () => {
             justifyContent={'space-between'}
             p={{ base: '15px', md: '15px 70px' }}
             zIndex={'1000'}
-            bgGradient={{ base: bgColor, md: bgColor }}>
+            bg={bgColor}>
+            transition={'background-color 0.5s ease'}
             <Link to='/'>
                 <HStack>
                     <Image src={Logo} w={'40px'} />
