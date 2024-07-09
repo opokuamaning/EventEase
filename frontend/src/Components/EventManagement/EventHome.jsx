@@ -1,4 +1,4 @@
-import { Input, Stack, Text, Checkbox, CheckboxGroup, RadioGroup, Box, Radio, Card, CardBody, Heading, Image, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { Input, Stack, Text, Checkbox, CheckboxGroup, RadioGroup, Box, Radio, Card, CardBody, Heading, Image, Button, Collapse, useDisclosure } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import { eventData as data } from "../../data/db";
@@ -8,6 +8,7 @@ const EventHome = () => {
   const [selectedType, setSelectedType] = useState([]);
   const [selectedPrice, setSelectedPrice] = useState('');
   const [search, setSearch] = useState('');
+  const { isOpen, onToggle } = useDisclosure()
 
   const truncatedDescription = (description, id) => {
     const words = description.split(' ');
@@ -60,36 +61,32 @@ const EventHome = () => {
             </Stack>
           </Stack>
           <Stack display={{ base: 'flex', md: 'none' }} alignContent={'center'} >
-            <Box w={'100%'} display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
-              <Text fontWeight={'700'} fontSize={'20px'}>Filter</Text>
-              <Menu isLazy>
-                <MenuButton>Sort by</MenuButton>
-                <MenuList w={'100%'}>
-                  <MenuItem>
-                    <Stack>
-                      <Text fontWeight={'500'} fontSize={'16px'}>Type</Text>
-                      <CheckboxGroup colorScheme='teal' defaultValue={['Free', 'Paid']} onChange={setSelectedType}>
-                        <Stack spacing={[1, 5]} direction={'column'} pl={'15px'}>
-                          <Checkbox value='Free' colorScheme="teal">Free</Checkbox>
-                          <Checkbox value='Paid'>Paid</Checkbox>
-                        </Stack>
-                      </CheckboxGroup>
-                    </Stack>
-                  </MenuItem>
-                  <MenuItem>
-                    <Stack>
-                      <Text fontWeight={'500'} fontSize={'16px'}>Price</Text>
-                      <RadioGroup defaultValue='1' onChange={setSelectedPrice}>
-                        <Stack spacing={4} direction='column' pl={'15px'}>
-                          <Radio value='above500' colorScheme="teal">Above 500</Radio>
-                          <Radio value='below500' colorScheme="teal">Below 500</Radio>
-                        </Stack>
-                      </RadioGroup>
-                    </Stack>
-                  </MenuItem>
-                </MenuList>
-              </Menu>
-            </Box>
+              <Stack >
+                <Stack direction={'row'} display={'flex'} justifyContent={'space-between'}>
+                  <Text fontWeight={'700'} fontSize={'20px'}>Filter</Text>
+                  <Button onClick={onToggle}>Sort by</Button>
+                </Stack>
+                <Collapse in={isOpen} animateOpacity>
+                  <Stack>
+                    <Text fontWeight={'800'} fontSize={'16px'}>Type</Text>
+                    <CheckboxGroup colorScheme='teal' defaultValue={['Free', 'Paid']} onChange={setSelectedType}>
+                      <Stack spacing={[1, 5]} direction={'column'} pl={'15px'}>
+                        <Checkbox value='Free' colorScheme="teal">Free</Checkbox>
+                        <Checkbox value='Paid'>Paid</Checkbox>
+                      </Stack>
+                    </CheckboxGroup>
+                  </Stack>
+                  <Stack>
+                    <Text fontWeight={'800'} fontSize={'16px'}>Price</Text>
+                    <RadioGroup defaultValue='1' onChange={setSelectedPrice}>
+                      <Stack spacing={4} direction='column' pl={'15px'}>
+                        <Radio value='above500' colorScheme="teal" border={'1px solid teal'}>Above 500</Radio>
+                        <Radio value='below500' colorScheme="teal" border={'1px solid teal'}>Below 500</Radio>
+                      </Stack>
+                    </RadioGroup>
+                  </Stack>
+                </Collapse>
+              </Stack>
           </Stack>
           <Stack w={{ base: '95%', md: '85%' }} display={'flex'} flexDirection={{ base: 'column', md: 'row' }} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}>
             {
