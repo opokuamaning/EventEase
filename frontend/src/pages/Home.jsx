@@ -8,7 +8,7 @@ import GetStarted from './Shared/GetStarted'
 import Footer from './Shared/Footer'
 const Home = () => {
     return (
-        <Stack p={'0'} m={'0'}>
+        <Stack p={'0'} m={'0'} overflow={'hidden'}>
             <HomeNav />
             <Stack bgGradient='linear(to-r, bgColor.200t, bgColor.100t)' mt={'70px'}>
                 <CallToAction />
