@@ -71,7 +71,7 @@ Event ease provides a seamless experience o=for managing events. Here are some o
 
 ## Screenshots
 
-![App Screenshot](https://drive.google.com/file/d/1vHzeHn3hE6-yqf3wLPWUZIVQ5EoldFwX/view?usp=sharing)
+![App Screenshot](Screenshots/Screenshot%202024-07-10%20at%207.41.29 AM.png)
 
 
 ## Contributing
