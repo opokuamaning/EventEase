@@ -1,4 +1,4 @@
-import { Input, Stack, Text, Checkbox, CheckboxGroup, RadioGroup, Box, Radio, Card, CardBody, Heading, Image, Button, Collapse, useDisclosure } from "@chakra-ui/react";
+import { Input, Stack, Text, Checkbox, CheckboxGroup, RadioGroup, Radio, Card, CardBody, Heading, Image, Button, Collapse, useDisclosure } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import { eventData as data } from "../../data/db";
